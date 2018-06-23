@@ -12,15 +12,15 @@ function NowServing () {
   if (katzDeli.length == 0) {
     return "There is nobody waiting to be served!"
   } else {
-    
-    return katzDeli[-1]
+
+    return katzDeli.unshift()
   }
 }
 
 function currentLine (katzDeli) {
   if (katzDeli.length > 0) {
     var out = 'The line is currently: ';
-    for (var i = 0; i < katzDeli.length; i++) {
+    for let i = 0; i < katzDeli.length; i++) {
       out += `${i+1}. ${katzDeli[i]}`
       if (i < katzDeli.length) {
         out += ', '
